@@ -38,9 +38,9 @@ struct fmt
 */
 
 typedef struct fmt fmt_t;
-va_list (char buffer[], int flags, int width, int precision, int size);
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i),
+int handle_print(const char *fmt, int *i,
+va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /****************** FUNCTIONS ******************/
 /* Funtions to print chars and strings */
@@ -109,4 +109,4 @@ int width, int flags, char padd, char extra_c, int padd_start);
 int print_reverse(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 
-#endif
+#endif /* MAIN_H */
