@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /************* PRINT UNSIGNED NUMBER IN OCTAL ****************/
 
@@ -6,7 +7,7 @@
  * print_octal - Prints an unsigned number in octal notation
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @flags: Calculates active flags
  * @precision: Precision specification
@@ -42,7 +43,7 @@ int print_octal(va_list types, char buffer[],
  * print_hexa - Prints a hexadecimal number in lower or upper
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: List of arguments
  * @size: Size specifier
  * @size: Size specification
  * @flags: Calculates active flags
@@ -116,7 +117,7 @@ int print_unsigned(va_list types, char buffer[],
  * print_hexadecimal - Prints an unsigned number in hexadecimal notation
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @flags: Calculates active flags
  * @precision: Precision specification
@@ -136,7 +137,7 @@ int print_hexadecimal(va_list types, char buffer[],
  * print_hexa_upper - Prints an unsigned number in upper hexadecimal notation
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @flags: Calculates active flags
  * @precision: Precision specification

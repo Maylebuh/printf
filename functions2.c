@@ -6,7 +6,7 @@
  * print_reverse - Prints reverse string
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @flags: Calculates active flags
  * @precision: Precision specification
@@ -47,7 +47,7 @@ int print_reverse(va_list types, char buffer[],
  * print_rot13string - Print a string in rot13
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @flags: Calculates active flags
  * @precision: Precision specification
@@ -101,7 +101,7 @@ int print_rot13string(va_list types, char buffer[],
  * print_non_printable - Prints ascii codes in hexa of non printable chars
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @flags: Calculates active flags
  * @precision: Precision specification
@@ -138,7 +138,7 @@ int print_non_printable(va_list types, char buffer[],
  * print_pointer - Prints the value of a pointer variable
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: List a of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @flags: Calculates active flags
  * @precision: Precision specification

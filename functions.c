@@ -6,7 +6,7 @@
  * print_char - Prints a char
  * @buffer: Buffer array to handle print
  * @width: Width
- * @types: List a of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @precision: Precision specification
  * @flags: Calculates active flags
@@ -27,7 +27,7 @@ int print_char(va_list types, char buffer[],
  * print_string - Prints a string
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: List a of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @precision: Precision specification
  * @flags: Calculates active flags
@@ -82,7 +82,7 @@ int print_string(va_list types, char buffer[],
  * print_int - print int
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @precision: Precision specification
  * @flags: Calculates active flags
@@ -121,7 +121,7 @@ int print_int(va_list types, char buffer[],
  * print_binary - Prints an unsigned number
  * @buffer: Buffer array to handle print
  * @width: get width
- * @types: Lista of arguments
+ * @types: list of arguments
  * @size: Size specifier
  * @precision: Precision specification
  * @types: Lista of arguments
@@ -171,7 +171,7 @@ int print_binary(va_list types, char buffer[],
  * @buffer: Buffer array to handle print
  * @width: get width
  * @size: Size specifier
- * @types: Lista of arguments
+ * @types: list of arguments
  * @flags: Calculates active flags
  * @precision: Precision specification
  * Return: Number of chars printed
