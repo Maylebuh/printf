@@ -1,33 +1,32 @@
 #include "main.h"
 /**
  * get_width - printed width
- * @format: string to be formatted
- * @i: argument input
+ * @format: formatted string
+ * @a: input
  * @list: list of arguments.
- * Return: width
+ * Return: 0
  */
-int get_width(const char *format, int *i, va_list list)
+int get_width(const char *format, int *a, va_list list)
 {
-int current index = *i + 1;
+int current_index;
 int width = 0;
-for (current index, format[current index] != '\0'; current
-		index_i++)
+for (current_index = *a + 1; format[current_index] != '\0'; current_index++)
 {
-if (is_digit(format[current index]))
+if (is_digit(format[current_index]))
 {
 width *= 10;
-width += format[current index] - '0';
+width += format[current_index] - '0';
 }
-else if (format curr_i == '*')
+else if (format[current_index] == '*')
 {
-curr_i++;
+current_index++;
 width = va_arg(list, int);
 break;
 }
 else
 break;
 }
-*i = curr_i - 1;
-return (width);
+*a = current_index - 1;
+return (0);
 }
 
