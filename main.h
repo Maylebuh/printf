@@ -79,11 +79,11 @@ int is_digits(char);
 int append_hexa_code(char, char[], int a);
 long int convert_size_unsgnd(unsigned long int num, int size);
 int _printable(char a);
-int write_num(int ind, char bff[], int flags, int width, int precision,
+int write_number(int ind, char bff[], int flags, int width, int precision,
 int length, char d, char extra_c);
 int handle_char(char c, char buffer[],
 int flags, int width, int precision, int size);
-int write_num(int is_positive, int ind, char buffer[],
+int write_num(int is_positive, int index, char buffer[],
 int flags, int width, int precision, int size);
 int write_unsigned(int is_negative, int ind,
 char buffer[],
