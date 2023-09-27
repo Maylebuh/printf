@@ -25,18 +25,17 @@ int _printf(const char *format, ...)
 			buffer[buff_ind++] = format[a];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
-			/* write(1, &format[i], 1);*/
-			ptinted_chars++;
+			printed_chars++;
 		}
 		else
 		{
 			print_buffer(buffer, &buff_ind);
-			flags = get_flags(format, &i);
-			width = get_width(format, &i, list);
-			precision = get_precision(format, &i, list);
-			size = get_size(format, &i);
-			++i;
-			printed = _handle_print(format, &i, list, buffer,
+			flags = get_flags(format, &a);
+			width = get_width(format, &a, list);
+			precision = get_precision(format, &a, list);
+			size = get_size(format, &a);
+			++a;
+			printed = _handle_print(format, &a, list, buffer,
 					flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
@@ -49,14 +48,14 @@ int _printf(const char *format, ...)
 }
 
 /**
- * print_buffer - Prints the contents of the buffer if it exist
- * @buffer: Array of chars
- * @buff_ind: Index at which to add next char, represents the length.
+ * prints_buffer - prints the contents of buffer
+ * @buffer: array of chars
+ * @buf_ind : index of next char.
  */
 
-void print_buffer(char buffer[], int *buff_ind)
+void prints_buffer(char buffer[], int *buf_ind)
 {
-	if (*buff_ind > 0)
-		write(1, &buffer[0], *buff_ind);
-	*buff_ind = 0;
+	if (*buf_ind > 0)
+		write(1, &buffer[0], *buf_ind);
+	*buf_ind = 0;
 }

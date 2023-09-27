@@ -1,16 +1,16 @@
 #include "main.h"
 
 /**
- * handle__char - prints  string
- * @a: chars
+ * handle_chars - prints string
+ * @a: chars type
  * @buffer: buffer array
  * @flags: active flags.
  * @width: width.
  * @precision: precision
  * @size: size
- * Return: 0
+ * Return: chars printed
  */
-int handle_char(char a, char buffer[],
+int handle_chars(char a, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = 0;
@@ -43,17 +43,17 @@ int handle_char(char a, char buffer[],
 }
 
 /**
- * write_num - prints string
- * @is_negative: lists arguments
- * @index: index
+ * write_numbs - prints string
+ * @is_negative: list arguments
+ * @index: char type
  * @buffer: buffer array
  * @flags:  flags
  * @width: width.
  * @precision: precision
  * @size: size
- * Return: 0
+ * Return: printed chars
  */
-int write_number(int is_negative, int index, char buffer[],
+int write_numbs(int is_negative, int index, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int length = BUFF_SIZE - index - 1;
@@ -74,22 +74,22 @@ int write_number(int is_negative, int index, char buffer[],
 		length, d, extra_ch));
 }
 /**
- * write_num - number using a buffer
- * @index: index
- * @buffer: buffer
+ * write_nums - number using a buffer
+ * @index: start buffer
+ * @buffer: buffer array
  * @flags: flags
  * @width: width
  * @prec: precision
  * @length: length
  * @d: pading char
  * @extra_c: another char
- * Return: 0
+ * Return: printed chars
  */
-int write_num(int index, char buffer[],
+int write_nums(int index, char buffer[],
 	int flags, int width, int prec,
 	int length, char d, char extra_c)
 {
-	int i, padd_start = 1;
+	int i, d_start = 1;
 
 	if (prec == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0' && width == 0)
 		return (0);
@@ -121,7 +121,7 @@ int write_num(int index, char buffer[],
 		else if (!(flags & F_MINUS) && d == '0')
 		{
 			if (extra_c)
-				buffer[--padd_start] = extra_c;
+				buffer[--d_start] = extra_c;
 			return (write(1, &buffer[d_start], i - d_start) +
 				write(1, &buffer[index], length - (1 - d_start)));
 		}
@@ -131,7 +131,7 @@ int write_num(int index, char buffer[],
 	return (write(1, &buffer[index], length));
 }
 /**
- * write_unsigned - writes unsigned number
+ * writes_unsigned - writes unsigned number
  * @is_negative: num is negative
  * @index: index
  * @buffer: array of chars
@@ -139,9 +139,9 @@ int write_num(int index, char buffer[],
  * @width: width
  * @precision: precision
  * @size: size
- * Return: 0
+ * Return: number of chars
  */
-int write_unsigned(int is_negative, int index,
+int writes_unsigned(int is_negative, int index,
 	char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -187,7 +187,7 @@ int write_unsigned(int is_negative, int index,
 }
 
 /**
- * write_pointer - write memory address
+ * write_pnter - write memory address
  * @buffer: arrays of chars
  * @index: index in the buffer
  * @length: length of number
@@ -195,11 +195,11 @@ int write_unsigned(int is_negative, int index,
  * @flags: flags
  * @d: char
  * @extra_c:another char
- * @padd_start:index to start
- * Return: number of chars.
+ * @d_start:index to start
+ * Return: number of chars
  */
-int write_pointer(char buffer[], int index, int length,
-	int width, int flags, char d, char extra_c, int padd_start)
+int write_pnter(char buffer[], int index, int length,
+	int width, int flags, char d, char extra_c, int d_start)
 {
 	int i;
 
@@ -227,11 +227,11 @@ int write_pointer(char buffer[], int index, int length,
 		else if (!(flags & F_MINUS) && d == '0')
 		{
 			if (extra_c)
-				buffer[--padd_start] = extra_c;
+				buffer[--d_start] = extra_c;
 			buffer[1] = '0';
 			buffer[2] = 'x';
-			return (write(1, &buffer[padd_start], i - padd_start) +
-				write(1, &buffer[index], length - (1 - padd_start) - 2));
+			return (write(1, &buffer[d_start], i - d_start) +
+				write(1, &buffer[index], length - (1 - d_start) - 2));
 		}
 	}
 	buffer[--index] = 'x';
@@ -240,4 +240,3 @@ int write_pointer(char buffer[], int index, int length,
 		buffer[--index] = extra_c;
 	return (write(1, &buffer[index], BUFF_SIZE - index - 1));
 }
-
